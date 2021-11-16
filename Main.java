@@ -18,10 +18,10 @@ class Main {
     String name = " ", age = " ", color = " ";
 
     people.add(new Person("Jacob", 22, "blue"));
-    people.add(new Person("A    ", 87, "pink"));
-    people.add(new Person("B    ", 13, "yellow"));
-    people.add(new Person("C    ", 55, "black"));
-    people.add(new Person("D    ", 4, "green"));
+    people.add(new Person("A", 87, "pink"));
+    people.add(new Person("B", 13, "yellow"));
+    people.add(new Person("C", 55, "black"));
+    people.add(new Person("D", 4, "green"));
 
 
 
@@ -56,15 +56,13 @@ class Main {
           name = bufReader.readLine();
           age = bufReader.readLine();
           color = bufReader.readLine();
-          System.out.printf("%-10s %n", name + "\t" + age + "\t" + color);
+          System.out.printf("%-10s %-10s %-10s %n", name, age, color);
         }
     bufReader.close();
-  } 
-
+  }
   catch (IOException exception) 
     {
     System.out.println("An error occurred: " + exception);
     }
-  
   }
 }
