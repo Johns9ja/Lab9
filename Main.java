@@ -18,15 +18,15 @@ class Main {
     String name = " ", age = " ", color = " ";
 
     people.add(new Person("Jacob", 22, "blue"));
-    people.add(new Person("A", 87, "pink"));
-    people.add(new Person("B", 13, "yellow"));
-    people.add(new Person("C", 55, "black"));
-    people.add(new Person("D", 4, "green"));
+    people.add(new Person("A    ", 87, "pink"));
+    people.add(new Person("B    ", 13, "yellow"));
+    people.add(new Person("C    ", 55, "black"));
+    people.add(new Person("D    ", 4, "green"));
 
 
-    FileWriter wFile; 
-    try 
-    {
+
+    try{
+      FileWriter wFile;  
       wFile = new FileWriter("data.txt");
       BufferedWriter fileOutput = new BufferedWriter(wFile);
 
@@ -40,25 +40,25 @@ class Main {
 
         fileOutput.flush();
       }
-      
       fileOutput.close();
     }
 
-  catch (IOException excpt) 
+  catch (IOException exception) 
     { 
-    excpt.printStackTrace(); 
+    System.out.println("An error occurred: " + exception);
     }
 
   try{
-  newFile = new FileReader(nameFile);
-  BufferedReader bufReader = new BufferedReader(newFile);
-  while (bufReader.ready()) {
-    name = bufReader.readLine();
-    age = bufReader.readLine();
-    color = bufReader.readLine();
-    System.out.println(name + age + color);
-  }
-bufReader.close();
+    FileReader newFile;
+    newFile = new FileReader("data.txt");
+    BufferedReader bufReader = new BufferedReader(newFile);
+      while (bufReader.ready()) {
+          name = bufReader.readLine();
+          age = bufReader.readLine();
+          color = bufReader.readLine();
+          System.out.printf("%-10s %n", name + "\t" + age + "\t" + color);
+        }
+    bufReader.close();
   } 
 
   catch (IOException exception) 
